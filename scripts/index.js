@@ -14,13 +14,6 @@ const userTCAgreement = document.querySelector('#tyc-input');
 //console.log(userLegalAge);
 //console.log(userTermsAndConditions);
 
-function User(userEmail, userPassword) {
-  this.email = userEmail;
-  this.password = userPassword;
-  this.legalAge = legalAge();
-  this.tycAccepted = tCAgreement();
-}
-
 function legalAge() {
   let legalAge;
   userLegalAge.forEach(element => {
@@ -45,13 +38,21 @@ function tCAgreement() {
   return tCAgreement;
 }
 
+function User(userEmail, userPassword) {
+  this.email = userEmail;
+  this.password = userPassword;
+  this.legalAge = legalAge();
+  this.tycAccepted = tCAgreement();
+}
+
+
 function crearUsuario() {
   const user = new User(document.querySelector('#email-input').value, document.querySelector('#password-input').value);
   console.log(user);
 }
 
 
-
+//CONSIGNA:
 // Escribe tu código aquí, siguiendo los siguientes lineamientos paso a paso:
 // 1. Obtenemos el valor ingresado en el input de email
 // 2. Obtenemos los datos ingresados en el input de password
@@ -61,7 +62,7 @@ function crearUsuario() {
 // un mensaje de error: "Debes ser mayor de edad para registrarte en el sitio"
 // 6. Validamos si el usuario aceptó los términos y condiciones. Si no, mostramos
 // un mensaje de error: "Debes aceptar los TyCs para registrarte en el sitio"
+// 7. Si todo esta correcto, mostramos por consola un objeto con la información
+// ingresada por el usuario.
 
-  // 7. Si todo esta correcto, mostramos por consola un objeto con la información
-  // ingresada por el usuario.
 
